@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Layout from './components/Layout';
+import NavigationBar from './components/Navigation';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Skills from './Skills';
+import NoMatch from './NoMatch';
+import Surprise from './Surprise';
+import Profile from './Profile';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <NavigationBar />
+      <Profile />
+      <Layout>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/skills" component={Skills} />
+            <Route path="/surprise" component={Surprise} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Router>
+      </Layout>
+      <Footer />
+    </React.Fragment>
   );
 }
 

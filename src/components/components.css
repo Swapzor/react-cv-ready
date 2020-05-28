@@ -1,0 +1,32 @@
+.jumbo {
+    background-image: url(../images/background-image.jpg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    height: 500px;
+}
+
+.footer-jumbo {
+    background-color: #007bff;
+}
+
+.link-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+.link-footer {
+    color: black;
+    flex-basis: 25%;
+
+}
+
+.link-footer:hover {
+    color: #33FF33;
+}
+
+.nav-link:hover {
+    color: #33FF33;
+}
